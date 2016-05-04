@@ -1,4 +1,4 @@
-var app = {
+/*var app = {
 
 	// server requirements
 	config 	: require( './node/config.js' ),
@@ -12,4 +12,9 @@ var app = {
 
 };
 
-app.start( app );
+app.start( app );*/
+
+var clockworks 	= require( './node/clockworks/clockworks.js' ),
+	config 		= require( './app-config' );
+
+clockworks.start( config );

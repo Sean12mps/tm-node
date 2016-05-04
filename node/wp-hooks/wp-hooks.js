@@ -20,7 +20,8 @@ var EventManager = function() {
 		addFilter : addFilter,
 		removeAction : removeAction,
 		doAction : doAction,
-		addAction : addAction
+		addAction : addAction,
+		reload : reload,
 	};
 
 	/**
@@ -30,6 +31,18 @@ var EventManager = function() {
 	var STORAGE = {
 		actions : {},
 		filters : {}
+	};
+
+	/**
+	 * Reload STORAGE.
+	 */
+	function reload() {
+
+		STORAGE = {
+			actions : {},
+			filters : {}
+		};
+
 	};
 
 	/**
@@ -248,7 +261,6 @@ var EventManager = function() {
 
 win.wp.hooks = new EventManager();
 
-
 exports.eventManager = EventManager;
 
 exports.addAction = win.wp.hooks.addAction;
@@ -262,3 +274,5 @@ exports.addFilter = win.wp.hooks.addFilter;
 exports.applyFilters = win.wp.hooks.applyFilters;
 
 exports.removeFilter = win.wp.hooks.removeFilter;
+
+exports.reload = win.wp.hooks.reload;
